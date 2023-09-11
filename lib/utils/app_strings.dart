@@ -1,4 +1,3 @@
-
- class AppStrings{
-  static const AppName = 'CAREBUS';
+class AppStrings {
+  static const appName = 'CAREBUS';
 }
