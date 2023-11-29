@@ -1,4 +1,4 @@
-import 'package:care_bus/screens/onboardingscreen.dart';
+import 'package:care_bus/screens/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,6 +22,6 @@ class InitialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OnBoardingScreen();
+    return const OnBoardingScreen();
   }
 }

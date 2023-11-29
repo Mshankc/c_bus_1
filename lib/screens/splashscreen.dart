@@ -4,32 +4,31 @@ import 'package:flutter/material.dart';
 import '../utils/app_strings.dart';
 
 class OnBoardingScreen extends StatelessWidget {
-  OnBoardingScreen({super.key});
-  void navigateToAnotherFile(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const UserSelection()),
-    );
-  }
+  const OnBoardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           actions: [
             IconButton(
-                onPressed: () {
-                  navigateToAnotherFile(context);
-                },
-                icon: const Icon(Icons.navigate_next_rounded))
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const UserSelection(),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.navigate_next),
+            ),
           ],
         ),
-        backgroundColor: Colors.white,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-//app name
             Stack(
               alignment: AlignmentDirectional.center,
               children: [
