@@ -14,7 +14,7 @@ class HomeContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 400,
+      height: 350,
       decoration: const ShapeDecoration(
         gradient: LinearGradient(
           colors: [
@@ -50,8 +50,8 @@ class HomeContainer extends StatelessWidget {
           Center(
             child: Image.asset(
               imageAddress,
-              height: 200,
-              width: 200,
+              height: 150,
+              width: 150,
             ),
           ),
           Padding(

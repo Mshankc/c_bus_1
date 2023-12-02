@@ -1,4 +1,6 @@
+import 'package:care_bus/screens/admin_home_screen.dart';
 import 'package:care_bus/screens/admin_signup_screen.dart';
+import 'package:care_bus/screens/driver_home_screen.dart';
 import 'package:care_bus/screens/driver_signup_screen.dart';
 import 'package:care_bus/screens/login_screen.dart';
 import 'package:care_bus/screens/parent_home_screen.dart';
@@ -28,6 +30,8 @@ class MyApp extends StatelessWidget {
         '/adminloginscreen': (context) => const AdminLogin(),
         '/loginscreen': (context) => const UserLogin(),
         '/parenthomescreen': (context) => const ParentHomePage(),
+        '/driverhomescreen': (context) => const DriverHomePage(),
+        '/adminhomescreen': (context) => const AdminHomePage(),
       },
     );
   }

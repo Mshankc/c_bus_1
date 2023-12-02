@@ -39,7 +39,9 @@ class _DriverLoginState extends State<DriverLogin> {
             const MyTextField(hintText: 'phone', obscureText: false),
             const MyTextField(hintText: 'experience', obscureText: false),
             SubmitButton(
-              onPress: () {},
+              onPress: () {
+                Navigator.pushNamed(context, '/loginscreen');
+              },
               buttonName: 'Submit',
             ),
           ],

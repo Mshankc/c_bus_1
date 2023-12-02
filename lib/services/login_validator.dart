@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 void handleLogin(BuildContext context, String username, String password) {
   if (username.toLowerCase() == 'admin' && password == '1234') {
-    Navigator.pushNamed(context, '/adminloginscreen');
+    Navigator.pushNamed(context, '/adminhomescreen');
   } else if (username.toLowerCase() == 'parent' && password == '1234') {
     Navigator.pushNamed(context, '/parenthomescreen');
   } else if (username.toLowerCase() == 'driver' && password == '1234') {
-    Navigator.pushNamed(context, '/driverloginscreen');
+    Navigator.pushNamed(context, '/driverhomescreen');
   } else {
     showDialog(
       context: context,

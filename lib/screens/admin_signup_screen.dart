@@ -46,7 +46,7 @@ class _AdminLoginState extends State<AdminLogin> {
             const MyTextField(hintText: 'phone', obscureText: false),
             const MyTextField(
                 hintText: AutofillHints.email, obscureText: false),
-            new SubmitButton(
+            SubmitButton(
               onPress: () {
                 Navigator.pushNamed(context, '/loginscreen');
               },

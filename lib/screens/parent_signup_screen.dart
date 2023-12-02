@@ -24,7 +24,9 @@ class _ParentLoginState extends State<ParentLogin> {
             const MyTextField(
                 hintText: AutofillHints.email, obscureText: false),
             SubmitButton(
-              onPress: () {},
+              onPress: () {
+                Navigator.pushNamed(context, '/loginscreen');
+              },
               buttonName: 'Submit',
             ),
           ],

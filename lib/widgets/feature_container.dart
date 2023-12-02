@@ -45,8 +45,8 @@ class FeatureContainer extends StatelessWidget {
               children: [
                 Image.asset(
                   imageAddress,
-                  width: 120,
-                  height: 120,
+                  width: 100,
+                  height: 100,
                 ),
                 Text(
                   featureName,
