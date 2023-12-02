@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
 class SubmitButton extends StatelessWidget {
-  const SubmitButton({super.key, required this.onPress});
+  const SubmitButton({
+    Key? key,
+    required this.onPress,
+    required this.buttonName,
+  }) : super(key: key);
+
   final VoidCallback onPress;
+  final String buttonName;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +31,15 @@ class SubmitButton extends StatelessWidget {
             )
           ],
         ),
-        child: const Padding(
-          padding: EdgeInsets.all(8.0),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: Text(
-            'Submit',
+            buttonName,
             textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
+            style: TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 20,
+                color: Colors.grey.shade900),
           ),
         ),
       ),

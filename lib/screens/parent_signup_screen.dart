@@ -25,6 +25,7 @@ class _ParentLoginState extends State<ParentLogin> {
                 hintText: AutofillHints.email, obscureText: false),
             SubmitButton(
               onPress: () {},
+              buttonName: 'Submit',
             ),
           ],
         ),

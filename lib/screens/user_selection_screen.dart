@@ -71,7 +71,9 @@ class _UserSelectionState extends State<UserSelection> {
                       const SizedBox(width: 20),
                       UserSelectContainer(
                         color: AppColors.kMainColor,
-                        onPress: () {},
+                        onPress: () {
+                          Navigator.pushNamed(context, '/adminloginscreen');
+                        },
                         user: 'Iam Admin',
                       ),
                     ],
@@ -79,7 +81,9 @@ class _UserSelectionState extends State<UserSelection> {
                   const SizedBox(height: 20),
                   UserSelectContainer(
                     color: AppColors.kMainColor,
-                    onPress: () {},
+                    onPress: () {
+                      Navigator.pushNamed(context, '/driverloginscreen');
+                    },
                     user: 'Iam Driver',
                   ),
                 ],
