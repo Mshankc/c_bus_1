@@ -1,4 +1,6 @@
+import 'package:care_bus/screens/parent_login_screen.dart';
 import 'package:care_bus/screens/splashscreen.dart';
+import 'package:care_bus/screens/user_selection_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +12,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: InitialPage(),
+      home: const InitialPage(),
+      routes: {
+        '/userselectionscreen': (context) => const UserSelection(),
+        '/parentloginscreen': (context) => const ParentLogin(),
+      },
     );
   }
 }
@@ -22,6 +28,6 @@ class InitialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const OnBoardingScreen();
+    return const Splashscreen();
   }
 }

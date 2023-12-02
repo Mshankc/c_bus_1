@@ -1,10 +1,10 @@
-import 'package:care_bus/screens/user_select_page.dart';
+import 'package:care_bus/screens/user_selection_screen.dart';
 import 'package:care_bus/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import '../utils/app_strings.dart';
 
-class OnBoardingScreen extends StatelessWidget {
-  const OnBoardingScreen({super.key});
+class Splashscreen extends StatelessWidget {
+  const Splashscreen({super.key});
 
   @override
   Widget build(BuildContext context) {

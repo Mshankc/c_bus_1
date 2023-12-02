@@ -5,9 +5,14 @@ import 'package:care_bus/widgets/user_container_widget.dart';
 import 'package:care_bus/utils/colors.dart';
 import 'package:care_bus/widgets/topcircularcontainer.dart';
 
-class UserSelection extends StatelessWidget {
+class UserSelection extends StatefulWidget {
   const UserSelection({super.key});
 
+  @override
+  State<UserSelection> createState() => _UserSelectionState();
+}
+
+class _UserSelectionState extends State<UserSelection> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -58,7 +63,9 @@ class UserSelection extends StatelessWidget {
                     children: [
                       UserSelectContainer(
                         color: AppColors.kMainColor,
-                        onPress: () {},
+                        onPress: () {
+                          Navigator.pushNamed(context, '/parentloginscreen');
+                        },
                         user: 'Iam parent',
                       ),
                       const SizedBox(width: 20),
