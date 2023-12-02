@@ -1,6 +1,8 @@
+import 'package:care_bus/utils/app_strings.dart';
+import 'package:care_bus/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:care_bus/widgets/user_container_widget.dart';
-import 'package:care_bus/utils/constants.dart';
+import 'package:care_bus/utils/colors.dart';
 import 'package:care_bus/widgets/topcircularcontainer.dart';
 
 class UserSelection extends StatelessWidget {
@@ -10,7 +12,7 @@ class UserSelection extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: kcbMainColor,
+        backgroundColor: AppColors.kMainColor,
         body: Column(
           children: [
             Align(
@@ -20,50 +22,60 @@ class UserSelection extends StatelessWidget {
                 width: 300,
               ),
             ),
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Let\'s Go',
-                style: TextStyle(fontSize: 25),
-              ),
-            ),
-            const Align(
-              alignment: Alignment.bottomLeft,
-              child: Text(
-                'Track your child during transit',
-                style: TextStyle(fontSize: 15),
-              ),
-            ),
-            Expanded(
-              flex: 4,
-              child: TopCircularContainer(
-                customColor: Colors.white,
-                customChild: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const Text('Who Are You ? '),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        UserSelectContainer(
-                          clor: kcbMainColor,
-                          onPress: () {},
-                          user: 'Iam parent',
-                        ),
-                        UserSelectContainer(
-                          clor: kcbMainColor,
-                          onPress: () {},
-                          user: 'Iam Admin',
-                        ),
-                      ],
-                    ),
-                    UserSelectContainer(
-                      clor: kcbMainColor,
-                      onPress: () {},
-                      user: 'Iam Driver',
-                    ),
-                  ],
+            const Padding(
+              padding: EdgeInsets.only(left: 30, bottom: 10),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  AppStrings.openingText_1,
+                  style: AppTextStyles.kOpeningTextStyle_1,
                 ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 30, bottom: 10),
+              child: Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(
+                    AppStrings.openingText_2,
+                    style: AppTextStyles.kOpeningTextStyle_2,
+                  )),
+            ),
+            TopCircularContainer(
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(left: 30),
+                    child: Text(
+                      AppStrings.openingText_3,
+                      style: AppTextStyles.kOpeningTextStyle_1,
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      UserSelectContainer(
+                        color: AppColors.kMainColor,
+                        onPress: () {},
+                        user: 'Iam parent',
+                      ),
+                      const SizedBox(width: 20),
+                      UserSelectContainer(
+                        color: AppColors.kMainColor,
+                        onPress: () {},
+                        user: 'Iam Admin',
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  UserSelectContainer(
+                    color: AppColors.kMainColor,
+                    onPress: () {},
+                    user: 'Iam Driver',
+                  ),
+                ],
               ),
             )
           ],

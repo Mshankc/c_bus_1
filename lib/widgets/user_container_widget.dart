@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class UserSelectContainer extends StatelessWidget {
   const UserSelectContainer({
     super.key,
-    required this.clor,
+    required this.color,
     required this.onPress,
     required this.user,
   });
-  final Color clor;
+  final Color color;
   final VoidCallback onPress;
   final String user;
 
@@ -20,7 +20,7 @@ class UserSelectContainer extends StatelessWidget {
         height: 104,
         margin: const EdgeInsets.all(15),
         decoration: BoxDecoration(
-          color: clor,
+          color: color,
           borderRadius: BorderRadius.circular(10),
           boxShadow: const [
             BoxShadow(
