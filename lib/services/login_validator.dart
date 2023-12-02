@@ -4,7 +4,7 @@ void handleLogin(BuildContext context, String username, String password) {
   if (username.toLowerCase() == 'admin' && password == '1234') {
     Navigator.pushNamed(context, '/adminloginscreen');
   } else if (username.toLowerCase() == 'parent' && password == '1234') {
-    Navigator.pushNamed(context, '/parentloginscreen');
+    Navigator.pushNamed(context, '/parenthomescreen');
   } else if (username.toLowerCase() == 'driver' && password == '1234') {
     Navigator.pushNamed(context, '/driverloginscreen');
   } else {
