@@ -1,3 +1,4 @@
+import 'package:care_bus/utils/address.dart';
 import 'package:care_bus/utils/app_strings.dart';
 import 'package:care_bus/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class _UserSelectionState extends State<UserSelection> {
             Align(
               alignment: Alignment.topRight,
               child: Image.asset(
-                'images/bus.png',
+                Address.kMainBusImage,
                 width: 300,
               ),
             ),
@@ -67,7 +68,7 @@ class _UserSelectionState extends State<UserSelection> {
                           Navigator.pushNamed(context, '/parentloginscreen');
                         },
                         user: 'Iam parent',
-                        icon: 'images/parents.png',
+                        icon: Address.kParentIcon,
                       ),
                       const SizedBox(width: 20),
                       UserSelectContainer(
@@ -76,7 +77,7 @@ class _UserSelectionState extends State<UserSelection> {
                           Navigator.pushNamed(context, '/adminloginscreen');
                         },
                         user: 'Iam Admin',
-                        icon: 'images/driver.png',
+                        icon: Address.kAdminLogo,
                       ),
                     ],
                   ),
@@ -87,7 +88,7 @@ class _UserSelectionState extends State<UserSelection> {
                       Navigator.pushNamed(context, '/driverloginscreen');
                     },
                     user: 'Iam Driver',
-                    icon: 'images/admin.png',
+                    icon: Address.kDriverIcon,
                   ),
                 ],
               ),

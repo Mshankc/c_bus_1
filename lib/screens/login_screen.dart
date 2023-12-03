@@ -1,3 +1,4 @@
+import 'package:care_bus/utils/address.dart';
 import 'package:care_bus/widgets/mytextfield.dart';
 import 'package:care_bus/widgets/submitbutton.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class _UserLoginState extends State<UserLogin> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset(
-            'images/bus.png',
+            Address.kMainBusImage,
             width: double.infinity,
           ),
           Column(

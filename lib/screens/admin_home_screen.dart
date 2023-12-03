@@ -1,3 +1,4 @@
+import 'package:care_bus/utils/address.dart';
 import 'package:flutter/material.dart';
 
 import 'package:care_bus/widgets/feature_container.dart';
@@ -18,7 +19,7 @@ class _AdminHomePageState extends State<AdminHomePage> {
         body: Column(
           children: [
             HomeContainer(
-              imageAddress: 'images/admin.png',
+              imageAddress: Address.kAdminLogo,
               name: 'Admin',
               onPress: () {},
             ),
@@ -26,23 +27,27 @@ class _AdminHomePageState extends State<AdminHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 FeatureContainer(
-                  imageAddress: 'images/bus_route.png',
+                  imageAddress: Address.kBusRouteIcon,
                   featureName: 'Route list',
                   onPress: () {},
                 ),
                 FeatureContainer(
-                  imageAddress: 'images/students.png',
+                  imageAddress: Address.kStdListImage,
                   featureName: 'Student\'s list',
-                  onPress: () {},
+                  onPress: () {
+                    Navigator.pushNamed(context, '/adminstudentscreen');
+                  },
                 )
               ],
             ),
             Padding(
               padding: const EdgeInsets.only(top: 8),
               child: FeatureContainer(
-                  imageAddress: 'images/driver.png',
+                  imageAddress: Address.kDriverIcon,
                   featureName: 'Driver\'s list',
-                  onPress: () {}),
+                  onPress: () {
+                    Navigator.pushNamed(context, '/adminroutescreen');
+                  }),
             )
           ],
         ),

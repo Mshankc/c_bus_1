@@ -1,3 +1,4 @@
+import 'package:care_bus/utils/address.dart';
 import 'package:flutter/material.dart';
 import 'package:care_bus/widgets/mytextfield.dart';
 import 'package:care_bus/widgets/submitbutton.dart';
@@ -27,9 +28,14 @@ class _DriverLoginState extends State<DriverLogin> {
                   ),
                 ),
                 // Your Image
-                Center(
-                  child: Image.asset(
-                    'images/On the way home.png',
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Image.asset(
+                      Address.kDriverIcon,
+                      height: 100,
+                      width: 100,
+                    ),
                   ),
                 ),
               ],

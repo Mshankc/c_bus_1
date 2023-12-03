@@ -1,3 +1,4 @@
+import 'package:care_bus/utils/address.dart';
 import 'package:flutter/material.dart';
 import 'package:care_bus/widgets/mytextfield.dart';
 import 'package:care_bus/widgets/submitbutton.dart';
@@ -32,7 +33,7 @@ class _AdminLoginState extends State<AdminLogin> {
                   child: Center(
                     child: ClipOval(
                       child: Image.asset(
-                        'images/admin_logo.png',
+                        Address.kAdminLogo,
                         width: 110,
                         height: 110,
                         fit: BoxFit.cover,

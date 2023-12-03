@@ -1,5 +1,7 @@
 import 'package:care_bus/screens/admin_home_screen.dart';
+import 'package:care_bus/screens/admin_route_list_screen.dart';
 import 'package:care_bus/screens/admin_signup_screen.dart';
+import 'package:care_bus/screens/admin_student_list_screen.dart';
 import 'package:care_bus/screens/driver_home_screen.dart';
 import 'package:care_bus/screens/driver_signup_screen.dart';
 import 'package:care_bus/screens/login_screen.dart';
@@ -25,13 +27,15 @@ class MyApp extends StatelessWidget {
       home: const InitialPage(),
       routes: {
         '/userselectionscreen': (context) => const UserSelection(),
-        '/parentloginscreen': (context) => const ParentLogin(),
-        '/driverloginscreen': (context) => const DriverLogin(),
-        '/adminloginscreen': (context) => const AdminLogin(),
         '/loginscreen': (context) => const UserLogin(),
         '/parenthomescreen': (context) => const ParentHomePage(),
+        '/parentloginscreen': (context) => const ParentLogin(),
+        '/driverloginscreen': (context) => const DriverLogin(),
         '/driverhomescreen': (context) => const DriverHomePage(),
+        '/adminloginscreen': (context) => const AdminLogin(),
         '/adminhomescreen': (context) => const AdminHomePage(),
+        '/adminroutescreen': (context) => const AdminRouteList(),
+        '/adminstudentscreen': (context) => const AdminStudentList(),
       },
     );
   }

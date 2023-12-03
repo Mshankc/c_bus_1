@@ -1,3 +1,4 @@
+import 'package:care_bus/utils/address.dart';
 import 'package:care_bus/widgets/feature_container.dart';
 import 'package:care_bus/widgets/user_home_container.dart';
 import 'package:flutter/material.dart';
@@ -17,22 +18,28 @@ class _DriverHomePageState extends State<DriverHomePage> {
         body: Column(
           children: [
             HomeContainer(
-              imageAddress: 'images/driver.png',
+              imageAddress: Address.kDriverIcon,
               name: 'Driver',
-              onPress: () {},
+              onPress: () {
+                Navigator.pushNamed(context, '/adminstudentscreen');
+              },
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 FeatureContainer(
-                  imageAddress: 'images/bus_route.png',
+                  imageAddress: Address.kBusRouteIcon,
                   featureName: 'Route',
-                  onPress: () {},
+                  onPress: () {
+                    Navigator.pushNamed(context, '/adminroutescreen');
+                  },
                 ),
                 FeatureContainer(
-                  imageAddress: 'images/attendance_logo.png',
+                  imageAddress: Address.kAttendanceLogo,
                   featureName: 'Attendance',
-                  onPress: () {},
+                  onPress: () {
+                    Navigator.pushNamed(context, '/adminstudentscreen');
+                  },
                 )
               ],
             ),
