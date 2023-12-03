@@ -6,10 +6,12 @@ class UserSelectContainer extends StatelessWidget {
     required this.color,
     required this.onPress,
     required this.user,
+    required this.icon,
   });
   final Color color;
   final VoidCallback onPress;
   final String user;
+  final String icon;
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +30,19 @@ class UserSelectContainer extends StatelessWidget {
           ],
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.person,
-              size: 20,
+            Expanded(
+              flex: 2,
+              child: Image.asset(
+                icon,
+                height: 60,
+                width: 60,
+              ),
             ),
-            Text(user)
+            Expanded(
+              child: Text(user),
+            ),
           ],
         ),
       ),

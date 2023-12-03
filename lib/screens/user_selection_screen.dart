@@ -67,6 +67,7 @@ class _UserSelectionState extends State<UserSelection> {
                           Navigator.pushNamed(context, '/parentloginscreen');
                         },
                         user: 'Iam parent',
+                        icon: 'images/parents.png',
                       ),
                       const SizedBox(width: 20),
                       UserSelectContainer(
@@ -75,6 +76,7 @@ class _UserSelectionState extends State<UserSelection> {
                           Navigator.pushNamed(context, '/adminloginscreen');
                         },
                         user: 'Iam Admin',
+                        icon: 'images/driver.png',
                       ),
                     ],
                   ),
@@ -85,6 +87,7 @@ class _UserSelectionState extends State<UserSelection> {
                       Navigator.pushNamed(context, '/driverloginscreen');
                     },
                     user: 'Iam Driver',
+                    icon: 'images/admin.png',
                   ),
                 ],
               ),
