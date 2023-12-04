@@ -4,11 +4,13 @@ import 'package:care_bus/screens/admin_signup_screen.dart';
 import 'package:care_bus/screens/admin_student_list_screen.dart';
 import 'package:care_bus/screens/driver_home_screen.dart';
 import 'package:care_bus/screens/driver_signup_screen.dart';
+import 'package:care_bus/screens/item_info.dart';
 import 'package:care_bus/screens/login_screen.dart';
 import 'package:care_bus/screens/parent_home_screen.dart';
 import 'package:care_bus/screens/parent_signup_screen.dart';
 import 'package:care_bus/screens/splashscreen.dart';
 import 'package:care_bus/screens/user_selection_screen.dart';
+import 'package:care_bus/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -36,6 +38,8 @@ class MyApp extends StatelessWidget {
         '/adminhomescreen': (context) => const AdminHomePage(),
         '/adminroutescreen': (context) => const AdminRouteList(),
         '/adminstudentscreen': (context) => const AdminStudentList(),
+        // add like this
+        Routename.itemInfo : (context)=> const ItemInfo(),
       },
     );
   }
