@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:care_bus/screens/user_selection_screen.dart';
+import 'package:care_bus/screens/login_screen.dart';
 import 'package:care_bus/utils/address.dart';
 import 'package:care_bus/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +21,7 @@ class _SplashscreenState extends State<Splashscreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const UserSelection(),
+          builder: (context) => LoginScreen(),
         ),
       );
     });
