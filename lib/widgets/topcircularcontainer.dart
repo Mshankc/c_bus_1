@@ -14,6 +14,7 @@ class TopCircularContainer extends StatelessWidget {
     return Expanded(
       child: Container(
         width: double.infinity,
+        margin: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(30),

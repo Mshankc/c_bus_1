@@ -8,4 +8,5 @@ class AppColors {
   static const Color kIconColor = Color(0xFFFFB344);
   static const Color kLoginContainerColor = Colors.white;
   static const Color kShadowColor = Color(0x3C0C0D0E);
+  static const Color kLoginTextColor_1 = Color(0xFFFFB344);
 }
