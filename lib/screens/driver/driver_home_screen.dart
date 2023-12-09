@@ -1,15 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:care_bus/screens/admin_student_list_screen.dart';
-import 'package:care_bus/screens/login_screen.dart';
-import 'package:care_bus/screens/parent/parent_child_list_screen.dart';
-import 'package:care_bus/screens/parent/parent_map_screen.dart';
-import 'package:care_bus/utils/address.dart';
-import 'package:care_bus/utils/colors.dart';
-
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:flutter/material.dart';
+import '../../utils/address.dart';
+import '../../utils/colors.dart';
+import '../../widgets/customdrawer.dart';
+import '../notification_screen.dart';
+import 'Driver_map_screen.dart';
+import 'driver_chat_screen.dart';
+import 'driver_student_list_screen.dart';
 
 class DriverHomeScreen extends StatefulWidget {
-  const DriverHomeScreen({super.key});
+  const DriverHomeScreen({Key? key}) : super(key: key);
 
   @override
   State<DriverHomeScreen> createState() => _DriverHomeScreenState();
@@ -17,6 +17,7 @@ class DriverHomeScreen extends StatefulWidget {
 
 class _DriverHomeScreenState extends State<DriverHomeScreen> {
   int _currentIndex = 0;
+
   void _navigateBottomBar(int index) {
     setState(() {
       _currentIndex = index;
@@ -24,25 +25,38 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
   }
 
   final List _pages = [
-    const ParentChildList(),
-    const ParentMapScreen(),
-    const AdminStudentList(),
+    const DriverStudentListScreen(),
+    const DriverMapScreen(),
+    const DriverChatScreen(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Image.asset(
-            Address.kParentIcon,
+        leading: Builder(
+          builder: (context) => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              onTap: () {
+                Scaffold.of(context).openDrawer();
+              },
+              child: Image.asset(
+                Address.kDriverIcon,
+              ),
+            ),
           ),
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const NotificationScreen()));
+            },
             icon: const Icon(
               Icons.notifications_rounded,
               color: Color(0xFFFFB344),
@@ -52,6 +66,9 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
         ],
       ),
       body: _pages[_currentIndex],
+      drawer: const CustomDrawer(
+        driverOrParentName: 'Ashraf',
+      ),
       bottomNavigationBar: AnimatedBottomNavigationBar(
         elevation: 0,
         backgroundColor: Colors.transparent,

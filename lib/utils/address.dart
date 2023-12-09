@@ -4,7 +4,7 @@ class Address {
   static const String kAdminLogo = 'images/admin.png';
   static const String kMainBusImage = 'images/bus.png';
   static const String kBusRouteIcon = 'images/bus_route.png';
-  static const String kDriverIcon = 'images/driver.png';
+  static const String kDriverIcon = 'images/bus_driver.png';
   static const String kParentIcon = 'images/couple.png';
   static const String kAttendanceLogo = 'images/attendance_logo.png';
 }

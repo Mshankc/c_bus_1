@@ -1,3 +1,4 @@
+import 'package:care_bus/services/login_validator.dart';
 import 'package:care_bus/utils/address.dart';
 import 'package:care_bus/utils/app_strings.dart';
 import 'package:care_bus/utils/colors.dart';
@@ -5,7 +6,6 @@ import 'package:care_bus/widgets/mytextfield.dart';
 import 'package:care_bus/widgets/topcircularcontainer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../widgets/login_button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController _usernameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,14 +53,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
-                  const MyTextField(
+                  MyTextField(
                     hintText: AutofillHints.username,
                     obscureText: false,
+                    controller: _usernameController,
                   ),
                   const MyTextField(
                       hintText: AutofillHints.password, obscureText: true),
                   LoginButton(
-                    onTap: () {},
+                    onTap: () {
+                      HandleLogin(context, _usernameController.text);
+                    },
                     name: 'Login',
                   ),
                 ],

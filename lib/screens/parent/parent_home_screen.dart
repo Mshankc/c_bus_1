@@ -1,11 +1,13 @@
-import 'package:care_bus/screens/admin_student_list_screen.dart';
-import 'package:care_bus/screens/login_screen.dart';
+import 'package:care_bus/screens/parent/parent_chat_screen.dart';
 import 'package:care_bus/screens/parent/parent_child_list_screen.dart';
 import 'package:care_bus/screens/parent/parent_map_screen.dart';
 import 'package:care_bus/utils/address.dart';
 import 'package:care_bus/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+
+import '../../widgets/customdrawer.dart';
+import '../notification_screen.dart';
 
 class ParentHomeScreen extends StatefulWidget {
   const ParentHomeScreen({super.key});
@@ -24,7 +26,7 @@ class _ParentHomeScreenState extends State<ParentHomeScreen> {
   final List _pages = [
     const ParentChildList(),
     const ParentMapScreen(),
-    const AdminStudentList(),
+    const ParentChatScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -32,18 +34,27 @@ class _ParentHomeScreenState extends State<ParentHomeScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GestureDetector(
-            child: Image.asset(
-              Address.kParentIcon,
+        leading: Builder(
+          builder: (context) => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              onTap: () {
+                Scaffold.of(context).openDrawer();
+              },
+              child: Image.asset(
+                Address.kParentIcon,
+              ),
             ),
-            onTap: () {}, //TODO:implement logout function
           ),
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const NotificationScreen()));
+            },
             icon: const Icon(
               Icons.notifications_rounded,
               color: Color(0xFFFFB344),
@@ -53,6 +64,7 @@ class _ParentHomeScreenState extends State<ParentHomeScreen> {
         ],
       ),
       body: _pages[_currentIndex],
+      drawer: const CustomDrawer(driverOrParentName: 'Rajesh'),
       bottomNavigationBar: AnimatedBottomNavigationBar(
         elevation: 0,
         backgroundColor: Colors.transparent,

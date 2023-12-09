@@ -1,6 +1,7 @@
 import 'package:care_bus/screens/admin_route_list_screen.dart';
 
 import 'package:care_bus/screens/admin_student_list_screen.dart';
+import 'package:care_bus/screens/driver/driver_home_screen.dart';
 
 import 'package:care_bus/screens/item_info.dart';
 import 'package:care_bus/screens/login_screen.dart';
@@ -28,10 +29,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.kMainBgColor,
       ),
-      home: LoginScreen(),
+      home: const InitialPage(),
       routes: {
-        '/loginscreen': (context) => LoginScreen(),
+        '/loginscreen': (context) => const LoginScreen(),
         '/parenthomescreen': (context) => const ParentHomeScreen(),
+        '/driverhomescreen': (context) => const DriverHomeScreen(),
         '/adminroutescreen': (context) => const AdminRouteList(),
         '/adminstudentscreen': (context) => const AdminStudentList(),
         // add like this
