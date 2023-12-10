@@ -10,16 +10,26 @@ class ParentChildList extends StatefulWidget {
 }
 
 class _ParentChildListState extends State<ParentChildList> {
+  List name = ["Anver", "Ek", "Jasmin", "Nida"];
+  List studentClass = ["7th A", "10th", "3rd B", "5Th A"];
+  List place = ["Padinjarathara", "Thalassery", "Koduvally", "Koduvally"];
+  List photoUrl = [
+    "images/anver_img.jpg",
+    "images/ek_img.jpg",
+    "images/jasmine_img.jpg",
+    "images/nidha_img.jpg"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 4,
+      itemCount: name.length,
       itemBuilder: (BuildContext context, int index) {
-        return const ChildDetailCard(
-          studentName: '',
-          studentClass: '',
-          studentPlace: '',
-          studentPhotoUrl: '',
+        return ChildDetailCard(
+          studentName: name[index],
+          studentClass: studentClass[index],
+          studentPlace: place[index],
+          studentPhotoUrl: photoUrl[index],
         );
       },
     );

@@ -1,4 +1,5 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:care_bus/screens/driver/present_students_list_screen.dart';
 import 'package:flutter/material.dart';
 import '../../utils/address.dart';
 import '../../utils/colors.dart';
@@ -26,6 +27,7 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
 
   final List _pages = [
     const DriverStudentListScreen(),
+    const PresentStudentsList(),
     const DriverMapScreen(),
     const DriverChatScreen(),
   ];
@@ -73,7 +75,7 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         activeColor: AppColors.kActiveNavColor,
-        icons: const [Icons.home, Icons.map, Icons.chat],
+        icons: const [Icons.home, Icons.list_rounded, Icons.map, Icons.chat],
         iconSize: 32,
         gapWidth: 8,
         splashSpeedInMilliseconds: 200,

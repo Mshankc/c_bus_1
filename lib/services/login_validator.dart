@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void HandleLogin(
+void handleLogin(
   BuildContext context,
   String username,
 ) {

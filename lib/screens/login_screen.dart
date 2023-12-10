@@ -62,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       hintText: AutofillHints.password, obscureText: true),
                   LoginButton(
                     onTap: () {
-                      HandleLogin(context, _usernameController.text);
+                      handleLogin(context, _usernameController.text);
                     },
                     name: 'Login',
                   ),

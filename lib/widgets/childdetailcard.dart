@@ -42,62 +42,60 @@ class ChildDetailCard extends StatelessWidget {
               padding: const EdgeInsets.all(25.0),
               child: ClipOval(
                 child: Image.asset(
-                  'images/anver_img.jpg',
+                  studentPhotoUrl,
                   width: MediaQuery.of(context).size.height * 1 / 8,
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      studentName,
+                      style: GoogleFonts.rubik(
+                          fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                    Text(
+                      studentClass,
+                      style: GoogleFonts.rubik(
+                        fontSize: 14,
+                      ),
+                    ),
+                    Text(
+                      studentPlace,
+                      style: GoogleFonts.rubik(
+                        fontSize: 14,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Flexible(
+              child: Row(
                 children: [
-                  Text(
-                    'Anver',
-                    style: GoogleFonts.rubik(
-                        fontWeight: FontWeight.bold, fontSize: 20),
-                  ),
-                  Text(
-                    'BCA',
-                    style: GoogleFonts.rubik(
-                      fontSize: 14,
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.close_rounded,
+                      color: Colors.red,
+                      size: iconSize,
                     ),
                   ),
-                  Text(
-                    '3rd year',
-                    style: GoogleFonts.rubik(
-                      fontSize: 14,
-                    ),
-                  ),
-                  Text(
-                    'panthippoyil',
-                    style: GoogleFonts.rubik(
-                      fontSize: 14,
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.check_rounded,
+                      color: Colors.green,
+                      size: iconSize,
                     ),
                   )
                 ],
               ),
-            ),
-            Row(
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.close_rounded,
-                    color: Colors.red,
-                    size: iconSize,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.check_rounded,
-                    color: Colors.green,
-                    size: iconSize,
-                  ),
-                )
-              ],
             )
           ],
         ),
