@@ -1,4 +1,5 @@
-import 'package:care_bus/screens/admin_route_list_screen.dart';
+
+import 'package:care_bus/firebase_options.dart';
 import 'package:care_bus/screens/driver/driver_home_screen.dart';
 import 'package:care_bus/screens/item_info.dart';
 import 'package:care_bus/screens/login_screen.dart';
@@ -6,12 +7,17 @@ import 'package:care_bus/screens/parent/parent_home_screen.dart';
 import 'package:care_bus/screens/splashscreen.dart';
 import 'package:care_bus/utils/app_strings.dart';
 import 'package:care_bus/utils/colors.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() {
+Future<void> main()async {
   runApp(const MyApp());
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+
+);
 }
 
 class MyApp extends StatelessWidget {
@@ -31,7 +37,6 @@ class MyApp extends StatelessWidget {
         '/loginscreen': (context) => const LoginScreen(),
         '/parenthomescreen': (context) => const ParentHomeScreen(),
         '/driverhomescreen': (context) => const DriverHomeScreen(),
-        '/adminroutescreen': (context) => const AdminRouteList(),
         Routename.itemInfo: (context) => const ItemInfo(),
       },
     );

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "363332554737",
+    "project_id": "care-bus",
+    "storage_bucket": "care-bus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363332554737:android:7634b27671432252357e50",
+        "android_client_info": {
+          "package_name": "com.example.care_bus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYQaOAVFdRsiRu7YtQqny-W35X-o3goKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

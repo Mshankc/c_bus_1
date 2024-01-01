@@ -16,16 +16,14 @@ class LoginButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 50),
+        padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 10),
         child: Container(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 1 / 12,
-          decoration: BoxDecoration(
-            color: Colors.yellow.shade200,
-            borderRadius: const BorderRadius.all(
-              Radius.circular(100),
-            ),
-            boxShadow: const [
+          height: MediaQuery.of(context).size.height * 0.06,
+          decoration:  BoxDecoration(
+            color: AppColors.kMainBgColor,
+            borderRadius:  BorderRadius.circular(10),
+            boxShadow:const [
               BoxShadow(
                   color: AppColors.kShadowColor,
                   offset: Offset(0, 2),
@@ -37,7 +35,7 @@ class LoginButton extends StatelessWidget {
             child: Text(
               name,
               style: GoogleFonts.rubik(
-                  fontSize: 20, color: Colors.yellow.shade900),
+                  fontSize: 20, color: Colors.black),
             ),
           ),
         ),

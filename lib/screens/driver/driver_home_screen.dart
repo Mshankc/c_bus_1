@@ -1,5 +1,6 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:care_bus/screens/driver/present_students_list_screen.dart';
+import 'package:care_bus/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import '../../utils/address.dart';
 import '../../utils/colors.dart';
@@ -14,6 +15,7 @@ class DriverHomeScreen extends StatefulWidget {
 
   @override
   State<DriverHomeScreen> createState() => _DriverHomeScreenState();
+
 }
 
 class _DriverHomeScreenState extends State<DriverHomeScreen> {
@@ -32,25 +34,25 @@ class _DriverHomeScreenState extends State<DriverHomeScreen> {
     const DriverChatScreen(),
   ];
 
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: Builder(
-          builder: (context) => Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: GestureDetector(
-              onTap: () {
-                Scaffold.of(context).openDrawer();
+        centerTitle: true,
+        title: Text("CARE BUS",style: AppTextStyles.kDefaultHeaderLG,),
+        leading: IconButton(
+              onPressed: () {
+                _scaffoldKey.currentState?.openDrawer();
               },
-              child: Image.asset(
+              icon: Image.asset(
                 Address.kDriverIcon,
               ),
             ),
-          ),
-        ),
         actions: [
           IconButton(
             onPressed: () {
