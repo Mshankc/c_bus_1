@@ -41,6 +41,7 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.care_bus"
@@ -66,7 +67,7 @@ flutter {
 }
 
 dependencies {
-    implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.android.support:multidex:2.0.1'
+    implementation("com.google.firebase:firebase-analytics")
    
 }
