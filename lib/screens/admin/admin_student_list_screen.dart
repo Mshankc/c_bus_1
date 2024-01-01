@@ -1,9 +1,9 @@
 import 'package:care_bus/utils/address.dart';
+import 'package:care_bus/utils/colors.dart';
+import 'package:care_bus/widgets/customlistview.dart';
+import 'package:care_bus/widgets/featurescreenhead.dart';
+import 'package:care_bus/widgets/topcircularcontainer.dart';
 import 'package:flutter/material.dart';
-import '../utils/colors.dart';
-import '../widgets/customlistview.dart';
-import '../widgets/featurescreenhead.dart';
-import '../widgets/topcircularcontainer.dart';
 
 class AdminStudentList extends StatefulWidget {
   const AdminStudentList({super.key});

@@ -1,7 +1,12 @@
+import 'package:care_bus/screens/item_info.dart';
 import 'package:care_bus/utils/address.dart';
+import 'package:care_bus/utils/app_strings.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:care_bus/widgets/mytextfield.dart';
 import 'package:care_bus/widgets/submitbutton.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class DriverLogin extends StatefulWidget {
   const DriverLogin({super.key});
@@ -11,6 +16,16 @@ class DriverLogin extends StatefulWidget {
 }
 
 class _DriverLoginState extends State<DriverLogin> {
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController expController = TextEditingController();
+
+  Future<void> addDriverData(name, exp, phone) async {
+    CollectionReference driver =
+        FirebaseFirestore.instance.collection("driver");
+    await driver.add({"name": name, "experience": exp, "phone_number": phone});
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -40,13 +55,25 @@ class _DriverLoginState extends State<DriverLogin> {
                 ),
               ],
             ),
-            const MyTextField(hintText: AutofillHints.name, obscureText: false),
-            const MyTextField(hintText: 'age', obscureText: false),
-            const MyTextField(hintText: 'phone', obscureText: false),
-            const MyTextField(hintText: 'experience', obscureText: false),
+            MyTextField(
+              hintText: 'Name',
+              obscureText: false,
+              controller: usernameController,
+            ),
+            MyTextField(
+              hintText: 'phone',
+              obscureText: false,
+              controller: phoneController,
+            ),
+            MyTextField(
+              hintText: 'experience',
+              obscureText: false,
+              controller: expController,
+            ),
             SubmitButton(
-              onPress: () {
-                Navigator.pushNamed(context, '/loginscreen');
+              onPress: () async{
+                await addDriverData(usernameController.text, expController.text,
+                    phoneController.text);
               },
               buttonName: 'Submit',
             ),

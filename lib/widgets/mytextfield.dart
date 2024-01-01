@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class MyTextField extends StatelessWidget {
   final controller;
   final String hintText;
+  final Function(String)? onChnage;
   final bool obscureText;
   const MyTextField({
     super.key,
     this.controller,
     required this.hintText,
-    required this.obscureText,
+    required this.obscureText, 
+    this.onChnage,
   });
 
   @override
@@ -28,6 +30,7 @@ class MyTextField extends StatelessWidget {
           ],
         ),
         child: TextField(
+          onChanged: onChnage,
           controller: controller,
           obscureText: obscureText,
           decoration: InputDecoration(

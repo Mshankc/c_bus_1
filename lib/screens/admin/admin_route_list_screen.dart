@@ -1,11 +1,11 @@
 import 'package:care_bus/utils/address.dart';
 import 'package:care_bus/utils/app_strings.dart';
 import 'package:care_bus/utils/colors.dart';
+import 'package:care_bus/widgets/customlistview.dart';
+import 'package:care_bus/widgets/featurescreenhead.dart';
 import 'package:care_bus/widgets/topcircularcontainer.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/customlistview.dart';
-import '../widgets/featurescreenhead.dart';
 
 class AdminRouteList extends StatefulWidget {
   const AdminRouteList({super.key});
